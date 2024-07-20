@@ -1,0 +1,47 @@
+
+
+
+
+
+print("How many rows are in the word search?")
+numRows = int(input(">"))
+print("How many collums are in the word search?")
+numCol = int(input(">"))
+
+wordSearch = []
+
+for i in range(numRows):
+    print("Please type a row of letters going from left to right, top to bottom.")
+    row = input(">")
+    row = list(row)
+    wordSearch.append(row)
+
+wordBank = []
+print("How many word(s) are there to search for?")
+numWords = int(input(">"))
+for i in range(numWords):
+    print("Please enter each word individually below.")
+    wordBank.append(input(">"))
+
+        #Search for the first letter of the word
+
+        #look directly around all of the first letters for the second letters
+        #Then countinue going in that direction for the next letter until the word is complete.
+        #repeat for the other words
+
+letterNum = 0
+wordchecker = []
+for a in range(len(wordBank)):
+    for b in range(numRows-1):
+        for c in range(numCol-1):
+            if wordBank[i][0] == wordSearch[b][c]:
+                wordchecker.append(wordSearch[b][c])
+                looper = False
+                loopadder =
+                while looper == False:
+                    if wordBank
+
+
+
+
+
