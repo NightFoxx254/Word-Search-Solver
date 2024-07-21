@@ -1,8 +1,3 @@
-
-
-
-
-
 print("How many rows are in the word search?")
 numRows = int(input(">"))
 print("How many collums are in the word search?")
@@ -29,17 +24,58 @@ for i in range(numWords):
         #Then countinue going in that direction for the next letter until the word is complete.
         #repeat for the other words
 
-letterNum = 0
-wordchecker = []
+
+solutions = []
 for a in range(len(wordBank)):
-    for b in range(numRows-1):
-        for c in range(numCol-1):
-            if wordBank[i][0] == wordSearch[b][c]:
-                wordchecker.append(wordSearch[b][c])
+    letterNum = 0
+    firstLetter = []
+    endingLetter = []
+    totalword = []
+    for b in range(numRows):
+        print("lil clyde")
+        for c in range(numCol):
+            print("lil elliot")
+            if wordBank[a][letterNum] == wordSearch[b][c]:
+                print("hi")
+                wordchecker = ""
+                wordchecker+=wordSearch[b][c]
                 looper = False
-                loopadder =
+                loopadder = 1
                 while looper == False:
-                    if wordBank
+                    #down
+                    if b < numRows-1:
+                        print("yo")
+                        if wordBank[a][letterNum+loopadder] == wordSearch[b+loopadder][c]:
+                            wordchecker+=wordSearch[b+loopadder][c]
+                            print("beep")
+                            print(wordchecker)
+                            if wordchecker == wordBank[a]:
+                                print("lil uzi vert")
+                                looper = True
+                                firstLetter = [b,c]
+                                endingLetter = [b+loopadder,c]
+                                totalword = [firstLetter,endingLetter]
+                                solutions.append(totalword)
+                            loopadder+=1
+                    #up
+                    if b > 0:
+                        print("bro")
+                        if wordBank[a][letterNum+loopadder] == wordSearch[b-loopadder][c]:
+                            wordchecker+=wordSearch[b+loopadder][c]
+                            print("meep")
+                            print(wordchecker)
+                            if wordchecker == wordBank[a]:
+                                print("mini boy clyde")
+                                looper = True
+                                firstLetter = [b,c]
+                                endingLetter = [b-loopadder,c]
+                                totalword = [firstLetter,endingLetter]
+                                solutions.append(totalword)
+                            loopadder+=1
+
+                        else:
+                            looper = True
+print(solutions)
 
 
 
